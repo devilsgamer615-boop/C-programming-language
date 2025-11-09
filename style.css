@@ -1,0 +1,36 @@
+/* Neon hacker theme */
+:root{--bg:#001;--neon:#00ff99;--muted:#7af4b2}
+*{box-sizing:border-box;font-family:monospace;color:var(--neon);}
+html,body{height:100%;margin:0;background:#000;overflow:hidden}
+canvas#matrixCanvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.app{position:relative;z-index:2;max-width:980px;margin:20px auto;padding:18px;background:rgba(0,0,0,0.5);border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.7)}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.title{font-size:18px}
+.controls .small{margin-left:8px}
+.screen{display:none;padding:10px}
+.screen.active{display:block}
+.muted{color:var(--muted);font-size:13px}
+.actions{margin:18px 0;display:flex;gap:10px}
+.btn{background:transparent;border:1px solid var(--neon);padding:8px 12px;border-radius:8px;color:var(--neon);cursor:pointer}
+.btn.big{padding:12px 18px;font-size:16px}
+.small{padding:6px 8px;font-size:13px}
+.grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.card{flex:1 1 calc(25% - 10px);min-width:140px;padding:12px;border-radius:6px;background:rgba(0,255,153,0.03);border:1px solid rgba(0,255,153,0.06);cursor:pointer;text-align:center}
+.card.locked{opacity:0.35;cursor:not-allowed}
+.quizHeader{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.timerWrap{background:rgba(0,0,0,0.6);padding:6px 10px;border-radius:6px;border:1px solid rgba(0,255,153,0.12)}
+#questionPanel{background:rgba(0,0,0,0.6);padding:12px;border-radius:8px;border-left:4px solid var(--neon)}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.option{padding:12px;border-radius:6px;border:1px solid rgba(0,255,153,0.08);background:rgba(0,0,0,0.4);cursor:pointer;user-select:none}
+.option.correct{background:rgba(0,255,153,0.12);border-color:var(--neon)}
+.option.wrong{background:rgba(255,0,0,0.06);border-color:#ff4d4d}
+.feedback{height:22px;margin-top:8px}
+.buttonsRow{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+.progress{height:10px;background:rgba(255,255,255,0.03);border-radius:6px;overflow:hidden;margin-top:8px}
+#progressBar{height:8px;background:rgba(255,255,255,0.03);border-radius:6px;margin:8px 0}
+#progressFill{height:100%;width:0;background:linear-gradient(90deg,rgba(0,255,153,0.2),rgba(0,255,153,0.6));transition:width 0.3s}
+.options .option:active{transform:scale(0.995)}
+.footer{margin-top:12px;text-align:center;font-size:13px;color:var(--muted)}
+
+/* Responsive */
+@media(max-width:800px){ .card{flex:1 1 calc(50% - 10px)} .app{margin:6px} }

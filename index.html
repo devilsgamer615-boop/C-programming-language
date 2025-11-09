@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>C Language Quiz — Full</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<canvas id="matrixCanvas"></canvas>
+<div class="app">
+  <header class="topbar">
+    <div class="title">C Language Quiz</div>
+    <div class="controls">
+      <button id="btnExport" class="small">Export Progress</button>
+      <button id="btnImport" class="small">Import Progress</button>
+      <button id="btnSettings" class="small">Settings</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="startScreen" class="screen active">
+      <h1>Learn C — Interactive Quiz</h1>
+      <p class="muted">100 levels • Hacker-themed • No console — runs in browser</p>
+      <div class="actions">
+        <button id="startBtn" class="btn big">Start Game</button>
+        <button id="dailyBtn" class="btn">Daily Practice</button>
+      </div>
+      <div class="leadboardPreview">
+        <h3>Leaderboard (Top)</h3>
+        <ol id="leaderPreview"></ol>
+      </div>
+    </section>
+
+    <section id="chaptersScreen" class="screen">
+      <h2>Select Chapter</h2>
+      <div id="chaptersGrid" class="grid"></div>
+      <div class="navRow"><button id="backFromChapters" class="btn small">Back</button></div>
+    </section>
+
+    <section id="levelsScreen" class="screen">
+      <h2 id="chapterTitle">Chapter</h2>
+      <div id="levelsGrid" class="grid"></div>
+      <div class="navRow"><button id="backFromLevels" class="btn small">Back</button></div>
+    </section>
+
+    <section id="quizScreen" class="screen">
+      <div class="quizHeader">
+        <div id="qInfo"></div>
+        <div class="timerWrap"><div id="timer">15</div></div>
+      </div>
+      <div id="progressBar"><div id="progressFill"></div></div>
+      <div id="questionPanel">
+        <div id="questionText"></div>
+        <div id="options" class="options"></div>
+      </div>
+      <div class="quizFooter">
+        <div id="feedback" class="feedback"></div>
+        <div class="buttonsRow">
+          <button id="retryBtn" class="btn small">Retry Level</button>
+          <button id="nextBtn" class="btn small" style="display:none">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="settingsScreen" class="screen">
+      <h2>Settings</h2>
+      <label><input type="checkbox" id="soundToggle" checked/> Sound effects</label><br/>
+      <label><input type="checkbox" id="confirmProgress" checked/> Confirm before clearing progress</label><br/>
+      <button id="clearProgress" class="btn small">Clear Progress</button>
+      <div class="navRow"><button class="btn small" id="closeSettings">Close</button></div>
+    </section>
+
+    <section id="leaderboardScreen" class="screen">
+      <h2>Leaderboard</h2>
+      <div id="leaderboardList"></div>
+      <div class="navRow"><button class="btn small" id="backFromLeaderboard">Back</button></div>
+    </section>
+
+  </main>
+
+  <footer class="footer muted">Built for learning C — Offline friendly • Progress stored locally</footer>
+</div>
+
+<input type="file" id="importFile" style="display:none" accept="application/json"/>
+
+<script src="script.js"></script>
+</body>
+</html>
